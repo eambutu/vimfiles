@@ -1,9 +1,8 @@
-filetype off
-
 call pathogen#infect()
 call pathogen#helptags()
 
-filetype plugin indent on
+filetype plugin on
+filetype indent on
 syntax on
 
 let python_hightlight_all = 1
@@ -25,6 +24,9 @@ set backspace=2
 set scrolloff=3
 
 set laststatus=2
+
+nmap <leader>w :w!<cr>
+nmap <leader>d :cd %:p:h
 
 inoremap kj <Esc>
 inoremap $1 ()<esc>i
@@ -57,6 +59,15 @@ set guifont=Bitstream\ Vera\ Sans\ Mono:h11
 set number
 set ruler
 
+set showmatch
+
+set cmdheight=2
+
+set magic
+
+set backspace=eol,start,indent
+set whichwrap+=<,>,h,l
+
 set cursorline
 hi cursorline guibg=#333333
 hi CursorColumn guibg=#333333
@@ -67,3 +78,7 @@ set expandtab
 set textwidth=140
 set softtabstop=4
 set autoindent
+
+set wrap
+set linebreak
+set formatoptions-=t
