@@ -68,6 +68,9 @@ set magic
 set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
 
+set noeb vb t_vb=
+set vb t_vb=
+
 set cursorline
 hi cursorline guibg=#333333
 hi CursorColumn guibg=#333333
