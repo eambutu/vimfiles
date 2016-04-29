@@ -55,7 +55,12 @@ set clipboard=unnamed
 
 set virtualedit=onemore
 
-set guifont=Bitstream\ Vera\ Sans\ Mono:h11
+if has("gui_gtk2")
+    set guifont=Bitstream\ Vera\ Sans\ Mono\ 11
+elseif has("gui_win32")
+    set guifont=Bitstream\ Vera\ Sans\ Mono:h11
+end
+
 set number
 set ruler
 
