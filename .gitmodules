@@ -31,3 +31,6 @@
 [submodule "bundle/vim-colors-solarized"]
 	path = bundle/vim-colors-solarized
 	url = git://github.com/altercation/vim-colors-solarized.git
+[submodule "vim-windowswap"]
+	path = vim-windowswap
+	url = https://github.com/wesQ3/vim-windowswap
