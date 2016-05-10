@@ -8,6 +8,7 @@ syntax on
 let python_hightlight_all = 1
 
 cd C:\Users\Phillip
+let mapleader = ","
 
 cab ndt NERDTree
 colorscheme candypaper
@@ -25,8 +26,11 @@ set scrolloff=3
 
 set laststatus=2
 
-nmap <leader>w :w!<cr>
-nmap <leader>d :cd %:p:h
+nnoremap <leader>w :w!<cr>
+nnoremap <leader>wq :wq<cr>
+nnoremap <leader>qq :q<cr>
+nnoremap <leader>d :cd %:p:h
+nnoremap <silent> <leader>ss :call WindowSwap#EasyWindowSwap()<CR>
 
 inoremap kj <Esc>
 inoremap $1 ()<esc>i
@@ -49,15 +53,14 @@ cno $q <C-\>eDeleteTillSlash()<cr>
 set wildmenu
 
 set showcmd
-let mapleader = ","
 
 set clipboard=unnamed
 
 set virtualedit=onemore
 
-if has("gui_gtk2")
+if has ("gui_gtk2")
     set guifont=Bitstream\ Vera\ Sans\ Mono\ 11
-elseif has("gui_win32")
+elseif has ("gui_win32")
     set guifont=Bitstream\ Vera\ Sans\ Mono:h11
 end
 
@@ -72,9 +75,6 @@ set magic
 
 set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
-
-set noeb vb t_vb=
-set vb t_vb=
 
 set cursorline
 hi cursorline guibg=#333333
