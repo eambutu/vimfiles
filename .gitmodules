@@ -34,3 +34,9 @@
 [submodule "vim-windowswap"]
 	path = vim-windowswap
 	url = https://github.com/wesQ3/vim-windowswap
+[submodule "bundle/delimitMate"]
+	path = bundle/delimitMate
+	url = https://github.com/Raimondi/delimitMate
+[submodule "bundle/YouCompleteMe"]
+	path = bundle/YouCompleteMe
+	url = https://github.com/Valloric/YouCompleteMe
