@@ -1,3 +1,5 @@
+set nocompatible
+
 call pathogen#infect()
 call pathogen#helptags()
 
@@ -7,11 +9,13 @@ syntax on
 
 let python_hightlight_all = 1
 
-cd C:\Users\Phillip
+let g:syntastic_cpp_compiler_options = ' -std=c++11'
+
+cd /home/phillip/
 let mapleader = ","
 
 cab ndt NERDTree
-colorscheme candypaper
+colorscheme molokai
 
 set title
 
@@ -26,13 +30,21 @@ set scrolloff=3
 
 set laststatus=2
 
-nnoremap <leader>w :w!<cr>
+let g:windowswap_map_keys = 0 "prevent default bindings
+nnoremap <leader>ww :w<cr>
 nnoremap <leader>wq :wq<cr>
-nnoremap <leader>qq :q<cr>
-nnoremap <leader>d :cd %:p:h
+nnoremap <leader>q :q<cr>
+nnoremap <leader>d :cd %:p:h<cr>
+nnoremap <leader>n :NERDTree<cr>
 nnoremap <silent> <leader>ss :call WindowSwap#EasyWindowSwap()<CR>
 
-inoremap kj <Esc>
+"split navigations
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+inoremap kj <esc>
 inoremap $1 ()<esc>i
 inoremap $2 []<esc>i
 inoremap $3 {}<esc>i
@@ -54,12 +66,13 @@ set wildmenu
 
 set showcmd
 
-set clipboard=unnamed
+set clipboard=unnamedplus
 
 set virtualedit=onemore
 
 if has ("gui_gtk2")
-    set guifont=Bitstream\ Vera\ Sans\ Mono\ 11
+    set guifont=Inconsolata\ 11
+"    set guifont=Bitstream\ Vera\ Sans\ Mono\ 11
 elseif has ("gui_win32")
     set guifont=Bitstream\ Vera\ Sans\ Mono:h11
 end
