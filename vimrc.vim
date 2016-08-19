@@ -14,7 +14,7 @@ let g:syntastic_cpp_compiler_options = ' -std=c++11'
 cd /home/phillip/
 let mapleader = ","
 
-cab ndt NERDTree
+cab ndt NERDTreeTabsToggle
 colorscheme molokai
 
 set title
@@ -35,7 +35,7 @@ nnoremap <leader>ww :w<cr>
 nnoremap <leader>wq :wq<cr>
 nnoremap <leader>q :q<cr>
 nnoremap <leader>d :cd %:p:h<cr>
-nnoremap <leader>n :NERDTree<cr>
+nnoremap <leader>n :NERDTreeTabsToggle<cr>
 nnoremap <silent> <leader>ss :call WindowSwap#EasyWindowSwap()<CR>
 
 "split navigations
