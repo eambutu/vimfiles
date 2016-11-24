@@ -17,12 +17,17 @@ let mapleader = ","
 cab ndt NERDTreeTabsToggle
 colorscheme molokai
 
+set mouse=a
+
 set title
 
 set ignorecase
 set smartcase
 set incsearch
 set hlsearch
+
+set ttyfast
+set lazyredraw
 
 set backspace=2
 
@@ -38,6 +43,21 @@ nnoremap <leader>d :cd %:p:h<cr>
 nnoremap <leader>n :NERDTreeTabsToggle<cr>
 nnoremap <silent> <leader>ss :call WindowSwap#EasyWindowSwap()<CR>
 
+"tab navigations
+nnoremap <leader>1 1gt
+nnoremap <leader>2 2gt
+nnoremap <leader>3 3gt
+nnoremap <leader>4 4gt
+nnoremap <leader>5 5gt
+nnoremap <leader>6 6gt
+nnoremap <leader>7 7gt
+nnoremap <leader>8 8gt
+nnoremap <leader>9 9gt
+
+"these don't work in terminal vim
+nnoremap <C-Tab> gt
+nnoremap <C-S-Tab> gT
+
 "split navigations
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
@@ -45,13 +65,6 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 inoremap kj <esc>
-inoremap $1 ()<esc>i
-inoremap $2 []<esc>i
-inoremap $3 {}<esc>i
-inoremap $4 {<esc>o}<esc>O
-inoremap $q ''<esc>i
-inoremap $e ""<esc>i
-inoremap $t <><esc>i
 
 vnoremap $1 <esc>`>a)<esc>`<i(<esc>
 vnoremap $2 <esc>`>a]<esc>`<i[<esc>
@@ -96,7 +109,7 @@ hi CursorColumn guibg=#333333
 set tabstop=8
 set shiftwidth=4
 set expandtab
-set textwidth=140
+set textwidth=80
 set softtabstop=4
 set autoindent
 
