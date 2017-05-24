@@ -1,0 +1,3 @@
+sudo ifconfig wlp2s0 down
+sudo ifconfig wlp2s0 up
+sudo dhclient wlp2s0

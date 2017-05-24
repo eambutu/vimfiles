@@ -1,0 +1,38 @@
+#!/bin/bash
+
+fscrn=$(mktemp --tmpdir XXXX.png)
+
+# requires graphicsmagick for better performance (erase <gm> to use imagemagick) 
+#scrot $fscrn
+import -window root $fscrn
+#xset dpms force off
+#gm mogrify -colorspace gray -blur 0x3 $fscrn
+#gm mogrify -blur 0x4 $fscrn
+#gm mogrify -scale 50% -blur 0x2 -scale 200% $fscrn
+gm mogrify -scale 10% -scale 1000% $fscrn
+#gm mogrify -scale 10% -scale $(identify -format "%wx%h" $fscrn)\! $fscrn
+
+xset +dpms dpms 5 5 5
+
+FONT="$(convert -list font | awk "{ a[NR] = \$2 } /family: $(fc-match sans -f "%{family}\n")/ { print a[NR-1]; exit }")"
+
+VALUE="60" #brightness value to compare to
+
+COLOR=$(convert "$fscrn" -gravity center -crop 100x100+0+0 +repage -colorspace hsb \
+    -resize 1x1 txt:- | awk -F '[%$]' 'NR==2{gsub(",",""); printf "%.0f\n", $(NF-1)}');
+
+if [ "$COLOR" -gt "$VALUE" ]; then #white background image and black text
+    BW="black"
+    ICON="/home/phillip/Scripts/icons/lockdark.png"
+else #black
+    BW="white"
+    ICON="/home/phillip/Scripts/icons/lock.png"
+fi
+
+convert "$fscrn" "${HUE[@]}" "${EFFECT[@]}" -font "$FONT" -pointsize 26 -fill "$BW" -gravity center \
+    -annotate +0+160 "Type password to unlock" "$ICON" -gravity center -composite "$fscrn"
+
+i3lock -n -i "$fscrn" -f
+
+xset dpms 0 0 0
+rm $fscrn
