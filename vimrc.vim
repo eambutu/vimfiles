@@ -42,6 +42,7 @@ nnoremap <leader>q :q<cr>
 nnoremap <leader>d :cd %:p:h<cr>
 nnoremap <leader>n :NERDTreeTabsToggle<cr>
 nnoremap <silent> <leader>ss :call WindowSwap#EasyWindowSwap()<CR>
+nnoremap <leader>p :call InsertPdb()<cr>
 
 "tab navigations
 nnoremap <leader>1 1gt
@@ -53,6 +54,9 @@ nnoremap <leader>6 6gt
 nnoremap <leader>7 7gt
 nnoremap <leader>8 8gt
 nnoremap <leader>9 9gt
+
+"paste pdb line
+nnoremap <leader>p oimport pdb; pdb.set_trace()<Esc>
 
 "these don't work in terminal vim
 nnoremap <C-Tab> gt
@@ -109,3 +113,8 @@ set autoindent
 set wrap
 set linebreak
 set formatoptions-=t
+
+function! InsertPdb()
+    let trace = expand("import pdb; pdb.set_trace()")
+    execute "normal o".trace
+endfunction
