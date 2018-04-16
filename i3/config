@@ -73,15 +73,15 @@ bindsym Mod4+XF86MonBrightnessDown exec light -U 5
 bindsym Mod4+F6 exec light -A 5
 bindsym Mod4+XF86MonBrightnessUp exec light -A 5
 
-# rhythmbox keyboard shortcuts (music player)
-bindsym Mod4+Control+Right exec rhythmbox-client --next
-bindsym Mod4+Control+Left exec rhythmbox-client --previous
-bindsym Mod4+Control+Up exec rhythmbox-client --play
-bindsym Mod4+Control+Down exec rhythmbox-client --pause
-bindsym Mod4+Control+XF86AudioLowerVolume exec rhythmbox-client --volume-down
-bindsym Mod4+Control+F2 exec rhythmbox-client --volume-down
-bindsym Mod4+Control+XF86AudioRaiseVolume exec rhythmbox-client --volume-up
-bindsym Mod4+Control+F3 exec rhythmbox-client --volume-up
+# spotify commands with spotify-cli
+bindsym Mod4+Control+Right exec spotify-cli --next
+bindsym Mod4+Control+Left exec spotify-cli --prev
+bindsym Mod4+Control+Up exec spotify-cli --play
+bindsym Mod4+Control+Down exec spotify-cli --pause
+bindsym Mod4+Control+XF86AudioLowerVolume exec spotify-cli --volumeup
+bindsym Mod4+Control+F2 exec spotify-cli --volumeup
+bindsym Mod4+Control+XF86AudioRaiseVolume exec spotify-cli --volumedown
+bindsym Mod4+Control+F3 exec spotify-cli --volumedown
 
 # screenshot
 bindsym Mod4+Print exec gnome-screenshot --interactive

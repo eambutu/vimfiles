@@ -1,0 +1,14 @@
+Host tom
+    Hostname TOM.RES.CMU.EDU
+    Port 22
+    User phillip
+
+Host andrew
+    Hostname unix.andrew.cmu.edu
+    Port 22
+    User pkwang
+
+Host reinforce
+    Hostname reinforce.ai
+    Port 22
+    User phillip
