@@ -3,15 +3,27 @@ set nocompatible
 call pathogen#infect()
 call pathogen#helptags()
 
+set expandtab
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+set textwidth=80
+set autoindent
+
 filetype plugin on
-filetype indent on
+filetype indent on 
+
+autocmd Filetype html setlocal ts=2 sw=2 expandtab
+autocmd Filetype javascript setlocal ts=2 sw=2 expandtab
+autocmd FileType python setlocal ts=2 sw=2 expandtab
+
 syntax on
 
 let python_hightlight_all = 1
 
 let g:syntastic_cpp_compiler_options = ' -std=c++11'
 
-cd /home/phillip/
+cd /Users/phillip/
 let mapleader = ","
 
 cab ndt NERDTreeTabsToggle
@@ -76,7 +88,7 @@ set wildmenu
 
 set showcmd
 
-set clipboard=unnamedplus
+set clipboard=unnamed
 
 set virtualedit=onemore
 
@@ -102,13 +114,6 @@ set whichwrap+=<,>,h,l
 set cursorline
 hi cursorline guibg=#333333
 hi CursorColumn guibg=#333333
-
-set tabstop=8
-set shiftwidth=4
-set expandtab
-set textwidth=80
-set softtabstop=4
-set autoindent
 
 set wrap
 set linebreak
